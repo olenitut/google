@@ -1,5 +1,11 @@
+import Header from "./components/Header/Header";
+
 const HomePage = () => {
-  return <div className="bg-amber-400">cb df gen dfgdddsfhd</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default HomePage;
