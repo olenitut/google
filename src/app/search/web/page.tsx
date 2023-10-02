@@ -1,7 +1,7 @@
 import styles from "./page.module.scss";
 
 const SearchPage = () => {
-  return <div></div>;
+  return <div>dsf</div>;
 };
 
 export default SearchPage;
