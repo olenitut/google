@@ -1,6 +1,7 @@
 import { IRes } from "@/app/search/web/page";
 import Link from "next/link";
 import parse from "html-react-parser";
+import Pagination from "../Pagination/Pagination";
 
 const ResultsWeb = ({ res }: { res: IRes }) => {
   return (
@@ -25,6 +26,9 @@ const ResultsWeb = ({ res }: { res: IRes }) => {
           <div className="text-gray-600">{parse(el.htmlSnippet)}</div>
         </div>
       ))}
+      <div>
+        <Pagination />
+      </div>
     </div>
   );
 };

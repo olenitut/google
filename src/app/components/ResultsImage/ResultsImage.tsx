@@ -1,5 +1,6 @@
 import { IRes } from "@/app/search/web/page";
 import Link from "next/link";
+import Pagination from "../Pagination/Pagination";
 
 const ResultsImage = ({ res }: { res: IRes }) => {
   return (
@@ -28,6 +29,9 @@ const ResultsImage = ({ res }: { res: IRes }) => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="ml-16">
+        <Pagination />
       </div>
     </div>
   );

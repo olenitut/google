@@ -49,10 +49,12 @@ export interface IRes {
 const SearchPage = async ({
   searchParams,
 }: {
-  searchParams: { query: string };
+  searchParams: { query: string; page: string };
 }) => {
+  const start = searchParams.page ? Number(searchParams.page) * 10 : 0;
+
   const res =
-    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}
+    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}&start=${start}
   `);
 
   if (!res.ok) {
