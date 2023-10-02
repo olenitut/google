@@ -15,3 +15,7 @@
     @apply cursor-pointer bg-transparent hover:bg-gray-200 rounded-full text-4xl p-2;
   }
 }
+
+nextjs-portal {
+  display: none;
+}

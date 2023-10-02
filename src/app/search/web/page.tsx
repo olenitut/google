@@ -24,12 +24,14 @@ const SearchPage = async ({
   searchParams: { query: string };
 }) => {
   const res =
-    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}
+    await fetch(`https://www.googleapis.com/customsearch/vv1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}
   `);
+
+  if (!res.ok) {
+    throw new Error("Server error");
+  }
+
   const data = await res.json();
-
-  console.log(data.items);
-
   return (
     <div>
       {data && data.items.map((el: ISearchItem) => <h1>{el.title}</h1>)}
