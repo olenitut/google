@@ -12,7 +12,7 @@ const Pagination = () => {
 
   return (
     <div className="flex gap-5">
-      {(!page || page !== "1") && (
+      {(!page || page !== "0") && (
         <Link
           href={`${path}?query=${query}&page=${Number(page) - 1}`}
           className="flex gap-1 items-center hover:text-blue-700"
