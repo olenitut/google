@@ -3,16 +3,17 @@ import Link from "next/link";
 import SearchForm from "./SearchForm/SearchForm";
 import Actions from "./Actions/Actions";
 import SearchOptions from "./SearchOptions/SearchOptions";
+import HomeSearch from "../Home/components/HomeSearch";
 
 const SearchHeader = () => {
   return (
     <header className="sticky top-0 bg-white">
       <div className="flex justify-between items-center">
-        <div className="flex-1 flex">
-          <Link href="/">
+        <div className="flex-1 flex items-center">
+          <Link href="/" className="mr-14">
             <Image src="/google.png" width={100} height={30} alt="google" />
           </Link>
-          <SearchForm />
+          <HomeSearch type="search" />
         </div>
         <Actions />
       </div>
