@@ -18,6 +18,15 @@ interface ISearchItem {
     scholarlyarticle: [];
     listitem: [];
   };
+  image: {
+    height: number;
+    width: number;
+    byteSize: number;
+    thumbnailLink: string;
+    thumbnailHeight: number;
+    thumbnailWidth: number;
+    contextLink: string;
+  };
 }
 
 export interface IRes {

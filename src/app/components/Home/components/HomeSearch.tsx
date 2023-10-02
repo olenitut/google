@@ -17,7 +17,6 @@ const HomeSearch = ({ type = "home" }: { type?: ISearchType }) => {
     e.preventDefault();
     if (!search.trim()) return;
     router.push(`/search/web?query=${search}`);
-    setSearch("");
   };
 
   const randomSearch = async () => {
