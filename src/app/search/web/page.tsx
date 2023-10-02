@@ -1,3 +1,5 @@
+import ResultsWeb from "@/app/components/ResultsWeb/ResultsWeb";
+
 interface ISearchItem {
   kind: string;
   title: string;
@@ -18,13 +20,30 @@ interface ISearchItem {
   };
 }
 
+export interface IRes {
+  kind: string;
+  url: {
+    type: string;
+    template: string;
+  };
+  queries: { request: []; nextPage: [] };
+  context: { title: string };
+  searchInformation: {
+    searchTime: number;
+    formattedSearchTime: string;
+    totalResults: string;
+    formattedTotalResults: string;
+  };
+  items: ISearchItem[];
+}
+
 const SearchPage = async ({
   searchParams,
 }: {
   searchParams: { query: string };
 }) => {
   const res =
-    await fetch(`https://www.googleapis.com/customsearch/vv1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}
+    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.query}
   `);
 
   if (!res.ok) {
@@ -32,11 +51,8 @@ const SearchPage = async ({
   }
 
   const data = await res.json();
-  return (
-    <div>
-      {data && data.items.map((el: ISearchItem) => <h1>{el.title}</h1>)}
-    </div>
-  );
+
+  return <div>{data && <ResultsWeb res={data} />}</div>;
 };
 
 export default SearchPage;
