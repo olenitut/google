@@ -6,7 +6,7 @@ export default function SearchLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="sm:px-20 sm:py-7 p-2">
+    <div className="">
       <SearchHeader />
       {children}
     </div>

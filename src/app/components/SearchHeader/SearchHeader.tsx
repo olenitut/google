@@ -8,9 +8,9 @@ import HomeSearch from "../Home/components/HomeSearch";
 const SearchHeader = () => {
   return (
     <header className="sticky top-0 bg-white">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center sm:px-20 sm:py-7 p-2">
         <div className="flex-1 flex items-center">
-          <Link href="/" className="mr-14">
+          <Link href="/" className="mr-3 sm:mr-14">
             <Image src="/google.png" width={100} height={30} alt="google" />
           </Link>
           <HomeSearch type="search" />
